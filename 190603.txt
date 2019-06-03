@@ -1,0 +1,49 @@
+// 1. Create new project (name : todo-list)
+$ create-react-app todo-list
+
+//2. Eject
+$ yarn eject
+$ y
+
+//3. Install module related to sass, and classnames
+$ yarn sass-loader node-sass classnames
+
+//4. Adjust open-color
+1) $ yarn add open-color
+
+2) crearte utils.scss in src/styles and import open-color library
+@import '~open-color/open-color';
+
+//5. Set main style
+1) create main.scss in /src/styles and add codes
+@import 'utils';
+
+body {
+   background: $oc-gray-1;
+   margin: 0px;
+}
+
+2) edit index.js
+import './styles/main.scss';
+
+import App from './components/App';
+
+//6. create App.js in /src/components
+import React, { Component } from 'react';
+
+class App extends Component {
+    render(){
+        return(
+            <div>
+                일정관리
+            </div>
+            );
+    }
+}
+
+export default App;
+
+//7. Start webpack develop server
+$ yarn
+	//for install babel-loader
+$ yarn start
